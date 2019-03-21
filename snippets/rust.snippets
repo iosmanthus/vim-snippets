@@ -267,11 +267,16 @@ snippet req "FromRequest"
 # Leetcode
 snippet leetcode "leetcode"
 	pub struct Solution {}
-	impl Solution {}
+	impl Solution {
+		${1}
+	}
 	#[cfg(test)]
 	mod tests {
-			use super::*;
-			#[test]
-			fn it_works() {}
+		use super::*;
+		#[test]
+		fn it_works() {}
 	}
 
+# <
+snippet < "<>"
+	<${1}>${2}
