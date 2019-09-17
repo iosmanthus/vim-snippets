@@ -150,18 +150,6 @@ snippet st "Struct definition"
 	struct ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`} {
 		${0}
 	}
-snippet impl "Struct implementation"
-	impl ${1:Type} {
-		${0}
-	}
-snippet implt "Trait implementation"
-	impl ${1:Trait} for ${2:Type} {
-		${0}
-	}
-snippet blimpl "Blanket trait implementation"
-	impl<${1:Trait}> ${2:Trait} for ${3:Type} {
-		${0}
-	}
 snippet stn "Struct with new constructor"
 	pub struct ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`} {
 		${0}
@@ -230,4 +218,49 @@ snippet asmut "AsMut trait implementation"
 			&mut self.${0:field}
 		}
 	}
+snippet ui "unimplemented"
+	unimplemented!()
+snippet ur "unreachable"
+	unreachable!()
+snippet us "unsafe block"
+	unsafe {
+		${1}
+	}
+snippet af "async block"
+	async fn ${2:name}(${3}) -> ${4} {
+		${5}
+	}
 
+snippet aw "await"
+	${1:Future}.await${2}
+snippet impl "Struct implementation"
+	impl ${1:Type} {
+		${0}
+	}
+snippet implt "Trait implementation"
+	impl ${1:Trait} for ${2:Type} {
+		${0}
+	}
+snippet implgt "Blanket trait implementation"
+	impl<${1:Generic}> ${2:Trait} for ${3:Type} {
+		${0}
+	}
+snippet implg "implementation with generic"
+	impl<${1:T}> ${2:Type}<$1> {
+		${0}
+	}
+snippet implgw "implementation with generic and trait bound"
+	impl<${1:T}> ${2:Type}<$1> where ${3}{
+		${0}
+	}
+
+snippet we "where"
+	where
+snippet vec "vector"
+	vec![${1}]${2}
+snippet ctor "constructor"
+	${1:Type}::new(${2})${0}
+snippet do "do-while"
+	while {
+		${1}
+	} {}
